@@ -1,0 +1,45 @@
+/*Notes:
+ - If dark background then bright letters, and viceversa.
+*/
+
+/*Variables blatantly stolen from another site*/
+:root {
+    --keyframes-from: slategray;
+    --keyframes-to: darkslategray;
+    --bg: darkslategray;
+    --fg: white;
+    --link: gold;
+    --link-hover: goldenrod;
+    --opacity: 0.75;
+    --hr-bg: none;
+    --hr-height: 0px;
+    --hr-border-top: 2px solid var(--fg);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    /*background-color: var(--bg);*/
+    /*color: var(--fg);*/
+    /*max-width: 800px;*/
+    /*margin: auto;*/
+    /*padding: 10px;*/
+    /*font-family: sans-serif;*/
+    /*word-break: break-word;*/
+    /*text-align: justify;*/
+}
+
+a {
+    /*color: gold;*/
+    /*color: darkolivegreen;*/
+    /*text-decoration: none;*/
+}

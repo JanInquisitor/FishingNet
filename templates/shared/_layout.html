@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Fishing Net | Portal{% endblock %}</title>
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../static/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    {% block additional_css %}{% endblock %}
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 style="text-align: center">Welcome the database</h1>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="columns" style="text-align: center">
+                    <nav style="" class="">
+                        <a href="/">Home</a>
+                        |
+                        <a href="/about">About</a>
+                        |
+                        <a href="/about">Database</a>
+                        |
+                        <a href="/wiki">Wiki</a>
+                        |
+                        <a href="/account/register">Register</a>
+                        |
+                        <a href="/account/login">Login</a>
+                    </nav>
+                </div>
+
+            </div>
+            <hr>
+        </section>
+
+        <section>
+            {% block main_content %}{% endblock %}
+        </section>
+
+        <footer>
+            <hr>
+            <h5>Footer</h5>
+            <p>Keep it simple</p>
+        </footer>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "shared/_layout.html" %}
+{% block main_content %}
+    <h1>This is the home page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorem ducimus ea iusto laborum quidem
+        reprehenderit sint? A cumque ducimus earum eligendi error illo incidunt necessitatibus nostrum perferendis quae,
+        vel!</p>
+    <div class="row">
+        <div class="column">
+            <h1>This is the second header</h1>
+            <h2>This is the third header!</h2>
+            <p>Latest <a href="">updates</a></p>
+            <div>
+                <p>{{ fish_info }}</p>
+                <p>{{ fish_info['first'] }}</p>
+                <p>{{ fish_info['first'][1] }}</p>
+                <p>{{ fish_info['first'][1]['package'] }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
