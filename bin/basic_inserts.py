@@ -1,7 +1,7 @@
 import os
 
-from data import db_session
-from data.Package import Package
+from fishingnet.data import db_session
+from fishingnet.data.Package import Package
 
 
 def insert_a_package():

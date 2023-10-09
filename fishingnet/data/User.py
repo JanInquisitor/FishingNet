@@ -1,6 +1,6 @@
 import datetime
 import sqlalchemy
-from data.modelbase import SqlAlchemyBase
+from fishingnet.data.modelbase import SqlAlchemyBase
 
 
 class User(SqlAlchemyBase):

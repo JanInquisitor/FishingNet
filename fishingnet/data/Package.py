@@ -2,9 +2,8 @@
 import datetime
 
 import sqlalchemy as sa
-import sqlalchemy.orm as orm
 
-from data.modelbase import SqlAlchemyBase
+from fishingnet.data.modelbase import SqlAlchemyBase
 
 
 class Package(SqlAlchemyBase):

@@ -1,7 +1,6 @@
 # This file is for testing and reference only
-import sqlalchemy.orm
 
-from data import db_session
+from fishingnet.data import db_session
 
 Release = tuple()
 

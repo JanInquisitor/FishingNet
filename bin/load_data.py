@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "..")))
 
 from infrastructure.num_convert import try_int
-import data.db_session as db_session
+import fishingnet.data.db_session as db_session
 from data.languages import ProgrammingLanguage
 from pypi_org.data.licenses import License
 from pypi_org.data.maintainers import Maintainer

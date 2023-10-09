@@ -19,9 +19,9 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from data.modelbase import SqlAlchemyBase
+from fishingnet.data.modelbase import SqlAlchemyBase
 # noinspection PyUnresolvedReferences
-from data import __all_models
+from fishingnet.data import __all_models
 
 target_metadata = SqlAlchemyBase.metadata
 

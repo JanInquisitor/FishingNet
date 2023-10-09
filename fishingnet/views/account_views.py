@@ -1,8 +1,8 @@
 import flask
 from flask import render_template, request, redirect
 
-from infrastructure import cookie_auth
-from services import user_service
+from fishingnet.infrastructure import cookie_auth
+from fishingnet.services import user_service
 
 blueprint = flask.Blueprint('account', __name__, template_folder='templates')
 

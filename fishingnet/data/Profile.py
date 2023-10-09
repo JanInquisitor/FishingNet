@@ -2,7 +2,7 @@ from datetime import datetime
 
 import sqlalchemy as sa
 
-from data.modelbase import SqlAlchemyBase
+from fishingnet.data.modelbase import SqlAlchemyBase
 
 
 class Profile(SqlAlchemyBase):

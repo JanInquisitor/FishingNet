@@ -2,7 +2,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 from sqlalchemy.orm import Session
 
-from data.modelbase import SqlAlchemyBase
+from fishingnet.data.modelbase import SqlAlchemyBase
 
 __factory = None
 
@@ -23,7 +23,6 @@ def global_init(db_file: str):
     __factory = orm.sessionmaker(bind=engine)
 
     # This imports the classes model so that the create_all() function have access to them and creates de db tables
-    from data import __all_models
 
     SqlAlchemyBase.metadata.create_all(engine)
 

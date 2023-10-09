@@ -1,6 +1,6 @@
 from typing import Optional
-from data.User import User
-from data import db_session
+from fishingnet.data.User import User
+from fishingnet.data import db_session
 from passlib.handlers.sha2_crypt import sha512_crypt as crypto
 
 
