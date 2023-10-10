@@ -14,6 +14,5 @@ class Profile(SqlAlchemyBase):
     created_date = sa.Column(sa.DateTime, default=datetime.now, index=True)
     updated_date = sa.Column(sa.DateTime, default=datetime.now, index=True)
 
-
     def __repr__(self):
         return "<Profile {}>".format(self.id)
