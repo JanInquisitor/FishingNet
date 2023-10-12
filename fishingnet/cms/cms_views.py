@@ -2,7 +2,7 @@ import flask
 from flask import render_template
 from flask.views import View
 
-from fishingnet.services import cms_service
+from fishingnet.cms import cms_service
 
 blueprint = flask.Blueprint('cms', __name__, template_folder='templates')
 

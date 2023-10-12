@@ -1,14 +1,14 @@
 from flask import render_template, request, redirect, Blueprint
 from flask.views import MethodView
 from fishingnet.infrastructure import cookie_auth
-from fishingnet.services.user_service import UserService
+from fishingnet.authentication.user_service import UserService
 
 account_blueprint = Blueprint('account', __name__, template_folder='templates')
 
 
 class AccountIndexView(MethodView):
-    def get(self):
-        return render_template('account/index.html')
+    def dispatch_request(self):
+        return redirect('/account/register')
 
 
 class RegisterView(MethodView):

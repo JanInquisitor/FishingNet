@@ -3,6 +3,7 @@ from flask import Flask
 
 from fishingnet.data import db_session as db_session
 from fishingnet.authentication import account_views
+from fishingnet.fish.views import FishView, FishFeed
 from fishingnet.profile import profile_views
 from fishingnet.home.home_views import HomeView
 from fishingnet.wiki.wiki_views import WikiView
@@ -24,8 +25,9 @@ class FlaskAppWrapper:
             ("/wiki", WikiView, 'wiki_view'),
             ("/account", AccountIndexView, "account_index"),
             ("/account/register", RegisterView, "register"),
-            ("/account/login", LoginView, "login")
-
+            ("/account/login", LoginView, "login"),
+            ("/fish", FishView, "fish"),
+            ("/fish/feed", FishFeed, "fish_feed")
         ])
 
     def configs(self, **configs):

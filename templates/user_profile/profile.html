@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Fishing Net | My Profile{% endblock %}
+
+{% block additional_css %}
+    <!-- Add any additional CSS specific to the /me page here -->
+{% endblock %}
+
+{% block main_content %}
+    <h2 style="text-align: center;">My Profile</h2>
+    <div class="row">
+        <div class="columns">
+            <p>Welcome, {{ user.username }}!</p>
+            <!-- Add other user-related information here -->
+        </div>
+    </div>
+    <!-- Add more content as needed -->
+{% endblock %}

@@ -7,6 +7,7 @@ from fishingnet.data.modelbase import SqlAlchemyBase
 
 class Profile(SqlAlchemyBase):
     __tablename__ = "profiles"
+
     id = sa.Column(sa.Integer, primary_key=True, autoincrement=True)
     name = sa.Column(sa.String)
     email = sa.Column(sa.String)

@@ -1,0 +1,48 @@
+{% extends 'shared/_layout.html' %}
+
+{% block additional_css %}
+    <style>
+        .feed-card {
+            border: 1px solid #e5e5e5;
+            background-color: #fff;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .feed-card h3 {
+            font-size: 20px;
+        }
+
+        .feed-card p {
+            color: #888;
+        }
+    </style>
+{% endblock %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="columns">
+            <h2>Fish Feed</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns">
+            <div class="feed-card">
+                <h3>Fish 1</h3>
+                <p>Last Activity: 2023-10-10 12:00:00</p>
+                <!-- Add other fish information as needed -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns">
+            <div class="feed-card">
+                <h3>Fish 2</h3>
+                <p>Last Activity: 2023-10-11 14:30:00</p>
+                <!-- Add other fish information as needed -->
+            </div>
+        </div>
+    </div>
+    <!-- Repeat the above block for each fish in your feed -->
+{% endblock %}
