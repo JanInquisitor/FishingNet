@@ -1,13 +1,11 @@
-import os.path
 from flask import Flask
 
 from fishingnet.data import db_session as db_session
-from fishingnet.authentication import account_views
-from fishingnet.fish.views import FishView, FishFeed
-from fishingnet.profile import profile_views
-from fishingnet.home.home_views import HomeView
-from fishingnet.wiki.wiki_views import WikiView
 from fishingnet.authentication.account_views import AccountIndexView, RegisterView, LoginView
+from fishingnet.fish.views import FishView, FishFeed, FishAddView
+from fishingnet.home.home_views import HomeView
+from fishingnet.profile.profile_views import ProfileView
+from fishingnet.wiki.wiki_views import WikiView
 
 
 class FlaskAppWrapper:
@@ -27,7 +25,10 @@ class FlaskAppWrapper:
             ("/account/register", RegisterView, "register"),
             ("/account/login", LoginView, "login"),
             ("/fish", FishView, "fish"),
-            ("/fish/feed", FishFeed, "fish_feed")
+            ("/fish/add", FishAddView, "fish_add"),
+            ("/fish/feed", FishFeed, "fish_feed"),
+            ("/profile/<int:id>", ProfileView, "profile_view"),
+            ("/profile/recent", ProfileView, "profile_recent"),
         ])
 
     def configs(self, **configs):
@@ -35,16 +36,17 @@ class FlaskAppWrapper:
             self.app.config[config.upper()] = value
 
     def setup_db(self):
-        db_file = os.path.join(
-            os.path.dirname(__file__),
-            'dbsqlite',
-            'fishingnet.sqlite'
-        )
-        db_session.global_init(db_file)
+        db_user = "admin"
+        db_password = "admin"
+        db_host = "localhost"  # Usually "localhost" if it's on your local machine
+        db_port = "5432"
+        db_name = "TestDB"
+        db_session.global_init(db_user, db_password, db_host, db_port, db_name)
 
     def register_blueprints(self):
+        pass
         # self.app.register_blueprint(account_views.blueprint)
-        self.app.register_blueprint(profile_views.blueprint)
+        # self.app.register_blueprint(profile_views.blueprint)
 
     def add_url_rules(self):
         # Add URL rules for class-based views here

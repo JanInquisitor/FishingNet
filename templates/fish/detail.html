@@ -1,0 +1,39 @@
+{% extends 'shared/_layout.html' %}
+
+{% block additional_css %}
+    <style>
+        .fish-profile {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .fish-profile h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .fish-profile b {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .fish-profile p {
+            margin-top: 5px;
+        }
+    </style>
+{% endblock %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="fish-profile">
+            <h1>{{fish_info.name}}</h1>
+            <b>Email:</b>
+            <p>{{fish_info.email}}</p>
+            <b>Description:</b>
+            <p>{{fish_info.description}}</p>
+            <!-- Add more details here -->
+        </div>
+    </div>
+{% endblock %}

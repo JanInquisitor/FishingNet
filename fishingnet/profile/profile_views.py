@@ -1,14 +1,14 @@
-import flask
-from flask import render_template, request
-
-blueprint = flask.Blueprint('profiles', __name__, template_folder='templates')
+from flask import render_template, request, views
+from flask.views import MethodView
 
 
-@blueprint.route('/profile/<int:profile_id>', methods=['GET'])
-def profile_details(profile_id: int):
-    return f"<h1>This is the profile of {profile_id}<h1>"
+class ProfileView(MethodView):
+    def get(self):
+        profile_id = request.args.get('id')
+        if profile_id is not None:
+            return f"<h1>This is the profile of {profile_id}<h1>"
+        else:
+            return "<h1>These are the recently updated profiles<h1>"
 
-
-@blueprint.route('/profile/recent', methods=['GET'])
-def recently_updated():
-    return "<h1>These are the recently updated profiles<h1>"
+    def post(self):
+        pass

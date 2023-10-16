@@ -1,48 +1,64 @@
 {% extends 'shared/_layout.html' %}
 
 {% block additional_css %}
-    <style>
-        .feed-card {
-            border: 1px solid #e5e5e5;
-            background-color: #fff;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 5px;
-        }
+<style>
+    .feed-card {
+        border: 1px solid #e5e5e5;
+        background-color: #fff;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 5px;
+    }
 
-        .feed-card h3 {
-            font-size: 20px;
-        }
+    .feed-card h3 {
+        font-size: 20px;
+    }
 
-        .feed-card p {
-            color: #888;
-        }
-    </style>
+    .feed-card p {
+        color: #888;
+    }
+</style>
 {% endblock %}
 
 {% block main_content %}
-    <div class="row">
-        <div class="columns">
-            <h2>Fish Feed</h2>
+<div class="row">
+    <div class="columns">
+        <h2>Fish Feed</h2>
+        <a href="/fish/add" class="button-primary">Add Fish</a>
+
+    </div>
+</div>
+<div class="row">
+    <div class="columns">
+        <div class="feed-card">
+            <h3>Fish 1</h3>
+            <p></p>
+            <p>Last Activity: 2023-10-10 12:00:00</p>
+            <!-- Add other fish information as needed -->
         </div>
     </div>
-    <div class="row">
-        <div class="columns">
-            <div class="feed-card">
-                <h3>Fish 1</h3>
-                <p>Last Activity: 2023-10-10 12:00:00</p>
-                <!-- Add other fish information as needed -->
-            </div>
+</div>
+<div class="row">
+    <div class="columns">
+        <div class="feed-card">
+            <h3>Fish 2</h3>
+            <p>Last Activity: 2023-10-11 14:30:00</p>
+            <!-- Add other fish information as needed -->
         </div>
     </div>
-    <div class="row">
-        <div class="columns">
-            <div class="feed-card">
-                <h3>Fish 2</h3>
-                <p>Last Activity: 2023-10-11 14:30:00</p>
-                <!-- Add other fish information as needed -->
-            </div>
-        </div>
-    </div>
-    <!-- Repeat the above block for each fish in your feed -->
+</div>
+
+<!--    {% for fish in fish_records %}-->
+<!--    <div class="row">-->
+<!--        <div class="columns">-->
+<!--            <div class="feed-card">-->
+<!--                <h3>{{ fish.name }}</h3>-->
+<!--                <p>Email: {{ fish.email }}</p>-->
+<!--                <p>Last Activity: {{ fish.last_activity.strftime('%Y-%m-%d %H:%M:%S') }}</p>-->
+<!--                &lt;!&ndash; Add other fish information as needed &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!-- Repeat the above block for each fish in your feed -->
 {% endblock %}
