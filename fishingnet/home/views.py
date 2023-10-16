@@ -1,5 +1,7 @@
 from flask import render_template, request
 from flask.views import MethodView
+
+from fishingnet.fish.fish_service import FishService
 from fishingnet.services.package_service import packages
 
 
@@ -8,8 +10,9 @@ class HomeView(MethodView):
         if page == 'about':
             return self.about()
         else:
-            info_test = {"first": packages(), "second": [1, 2, 3, 4, 5, 6, 7]}
-            return render_template('home/index.html', fish_info=info_test)
+            service = FishService()
+            count = service.count_all_fish()
+            return render_template('home/index.html', count=count)
 
     def about(self):
         return render_template('home/about.html')

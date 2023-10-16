@@ -6,8 +6,8 @@ from fishingnet.fish.fish_service import FishService
 class FishView(MethodView):
     service = FishService()
 
-    def get(self):
-        fish_info = self.service.create_fish()
+    def get(self, id):
+        fish_info = self.service.find_fish_by_id(id)
         return render_template("/fish/detail.html", fish_info=fish_info)
 
 
@@ -27,9 +27,16 @@ class FishAddView(MethodView):
         fish_info = self.service.create_fish(name, email, description)
 
         # Redirect to the updated fish detail page
-        return render_template("/fish/add.html")  # Render the form page
+        return render_template("/fish/detail.html", fish_info = fish_info)  # Render the form page
 
 
 class FishFeed(View):
     def dispatch_request(self):
-        return render_template("/fish/feed.html")
+        # Create an instance of the FishService
+        fish_service = FishService()
+
+        # Retrieve all fish records from the database
+        fish_records = fish_service.get_all_fish()
+
+        # Render the feed template with fish data
+        return render_template("/fish/feed.html", fish_records=fish_records)

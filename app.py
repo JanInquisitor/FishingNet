@@ -3,7 +3,7 @@ from flask import Flask
 from fishingnet.data import db_session as db_session
 from fishingnet.authentication.account_views import AccountIndexView, RegisterView, LoginView
 from fishingnet.fish.views import FishView, FishFeed, FishAddView
-from fishingnet.home.home_views import HomeView
+from fishingnet.home.views import HomeView
 from fishingnet.profile.profile_views import ProfileView
 from fishingnet.wiki.wiki_views import WikiView
 
@@ -24,7 +24,7 @@ class FlaskAppWrapper:
             ("/account", AccountIndexView, "account_index"),
             ("/account/register", RegisterView, "register"),
             ("/account/login", LoginView, "login"),
-            ("/fish", FishView, "fish"),
+            ("/fish/<int:id>", FishView, "fish"),
             ("/fish/add", FishAddView, "fish_add"),
             ("/fish/feed", FishFeed, "fish_feed"),
             ("/profile/<int:id>", ProfileView, "profile_view"),
@@ -40,7 +40,7 @@ class FlaskAppWrapper:
         db_password = "admin"
         db_host = "localhost"  # Usually "localhost" if it's on your local machine
         db_port = "5432"
-        db_name = "TestDB"
+        db_name = "fishingnetdb"
         db_session.global_init(db_user, db_password, db_host, db_port, db_name)
 
     def register_blueprints(self):

@@ -1,39 +1,71 @@
 {% extends 'shared/_layout.html' %}
 
 {% block additional_css %}
-    <style>
-        .fish-profile {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+<style>
+    .fish-profile {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-        .fish-profile h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    .fish-profile h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
 
-        .fish-profile b {
-            display: block;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    .fish-profile b {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+    }
 
-        .fish-profile p {
-            margin-top: 5px;
-        }
-    </style>
+    .fish-profile p {
+        margin-top: 5px;
+    }
+
+    .fish-image {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 {% endblock %}
 
 {% block main_content %}
-    <div class="container">
-        <div class="fish-profile">
-            <h1>{{fish_info.name}}</h1>
-            <b>Email:</b>
-            <p>{{fish_info.email}}</p>
-            <b>Description:</b>
-            <p>{{fish_info.description}}</p>
-            <!-- Add more details here -->
-        </div>
+<div class="container">
+    <div class="fish-profile">
+        <h1>{{fish_info.name}}</h1>
+
+        <!-- Sample Image URL -->
+        <img src="{{ url_for('static', filename='img/img.png') }}" alt="Fish Image" class="fish-image">
+
+        <b>Email:</b>
+        <p>{{fish_info.email}}</p>
+
+        <b>Description:</b>
+        <p>{{fish_info.description}}</p>
+
+        <b>Last Activity:</b>
+        <p>{{fish_info.last_activity.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+
+        <!-- Add more details here -->
+        <b>Phone Number:</b>
+        <p>{{fish_info.phone_number}}</p>
+
+        <b>Address:</b>
+        <p>{{fish_info.addresses}}</p>
+
+        <b>Social Network:</b>
+        <p>{{fish_info.social_network}}</p>
+
+        <b>Twitter Profile:</b>
+        <p>{{fish_info.twitter_profile}}</p>
+
+        <b>LinkedIn Profile:</b>
+        <p>{{fish_info.linkedin_profile}}</p>
+
+        <!-- Add more fields as needed -->
     </div>
+</div>
 {% endblock %}
+
+

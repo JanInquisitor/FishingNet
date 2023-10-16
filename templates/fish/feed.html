@@ -16,6 +16,7 @@
 
     .feed-card p {
         color: #888;
+        margin-bottom: 5px; /* Reduce the margin between paragraphs */
     }
 </style>
 {% endblock %}
@@ -25,40 +26,21 @@
     <div class="columns">
         <h2>Fish Feed</h2>
         <a href="/fish/add" class="button-primary">Add Fish</a>
-
     </div>
 </div>
+{% for fish in fish_records %}
 <div class="row">
     <div class="columns">
         <div class="feed-card">
-            <h3>Fish 1</h3>
-            <p></p>
-            <p>Last Activity: 2023-10-10 12:00:00</p>
+            <a href="/fish/{{ fish.id }}"><h3>{{ fish.name }}</h3></a>
+            <p>Email: {{ fish.email }}</p>
+            <p>Phone number: {{ fish.phone_number }}</p>
+            <p>Twitter: {{fish.twitter_profile}}</p>
+            <p>Last Activity: {{ fish.last_activity.strftime('%Y-%m-%d %H:%M:%S') }}</p>
             <!-- Add other fish information as needed -->
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="columns">
-        <div class="feed-card">
-            <h3>Fish 2</h3>
-            <p>Last Activity: 2023-10-11 14:30:00</p>
-            <!-- Add other fish information as needed -->
-        </div>
-    </div>
-</div>
-
-<!--    {% for fish in fish_records %}-->
-<!--    <div class="row">-->
-<!--        <div class="columns">-->
-<!--            <div class="feed-card">-->
-<!--                <h3>{{ fish.name }}</h3>-->
-<!--                <p>Email: {{ fish.email }}</p>-->
-<!--                <p>Last Activity: {{ fish.last_activity.strftime('%Y-%m-%d %H:%M:%S') }}</p>-->
-<!--                &lt;!&ndash; Add other fish information as needed &ndash;&gt;-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    {% endfor %}-->
+{% endfor %}
 <!-- Repeat the above block for each fish in your feed -->
 {% endblock %}
